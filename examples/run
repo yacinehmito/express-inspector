@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+
+const path = require("path");
+const mockery = require("mockery");
+
+function getExamplePath(exampleName) {
+  return path.join(__dirname, exampleName);
+}
+
+function getLibraryPath() {
+  return path.join(__dirname, "..");
+}
+
+const exampleName = process.argv[2];
+
+if (!exampleName) {
+  // eslint-disable-next-line no-console
+  console.error("Example missing");
+  process.exit(1);
+}
+
+const expressInspector = require(getLibraryPath());
+
+mockery.enable({
+  warnOnReplace: false,
+  warnOnUnregistered: false
+});
+
+mockery.registerMock("express-inspector", expressInspector);
+
+require(getExamplePath(exampleName));

@@ -1,0 +1,304 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`compact format matches previous version 1`] = `
+"Route /foos                [2m__tests__/_app.js:5:5[0m
+  POST <anonymous>         [2m__tests__/_app.js:5:5[0m
+Route /foos/:id            [2m__tests__/_app.js:17:1[0m
+  GET <anonymous>          [2m__tests__/_app.js:18:1[0m
+  DELETE <anonymous>       [2m__tests__/_app.js:21:7[0m
+Router /bars               [2m__tests__/_app.js:35:5[0m
+  Route /                  [2m__tests__/_app.js:27:8[0m
+    GET <anonymous>        [2m__tests__/_app.js:27:8[0m
+  Route /:id               [2m__tests__/_app.js:31:8[0m
+    GET <anonymous>        [2m__tests__/_app.js:31:8[0m
+"
+`;
+
+exports[`json format matches previous version 1`] = `
+"{
+  \\"type\\": \\"app\\",
+  \\"instance\\": \\"[Function]\\",
+  \\"children\\": [
+    {
+      \\"type\\": \\"handler\\",
+      \\"instance\\": \\"[Function]\\",
+      \\"name\\": \\"query\\",
+      \\"trace\\": [
+        {
+          \\"typeName\\": \\"Object\\",
+          \\"functionName\\": \\"Object.<anonymous>\\",
+          \\"methodName\\": null,
+          \\"fileName\\": \\"__tests__/_app.js\\",
+          \\"lineNumber\\": 5,
+          \\"columnNumber\\": 5,
+          \\"evalOrigin\\": \\"__tests__/_app.js\\",
+          \\"toplevel\\": false,
+          \\"eval\\": false,
+          \\"native\\": false,
+          \\"constructor\\": false
+        }
+      ]
+    },
+    {
+      \\"type\\": \\"handler\\",
+      \\"instance\\": \\"[Function]\\",
+      \\"name\\": \\"expressInit\\",
+      \\"trace\\": [
+        {
+          \\"typeName\\": \\"Object\\",
+          \\"functionName\\": \\"Object.<anonymous>\\",
+          \\"methodName\\": null,
+          \\"fileName\\": \\"__tests__/_app.js\\",
+          \\"lineNumber\\": 5,
+          \\"columnNumber\\": 5,
+          \\"evalOrigin\\": \\"__tests__/_app.js\\",
+          \\"toplevel\\": false,
+          \\"eval\\": false,
+          \\"native\\": false,
+          \\"constructor\\": false
+        }
+      ]
+    },
+    {
+      \\"type\\": \\"route\\",
+      \\"instance\\": \\"[Route]\\",
+      \\"children\\": [
+        {
+          \\"type\\": \\"handler\\",
+          \\"instance\\": \\"[Function]\\",
+          \\"name\\": \\"<anonymous>\\",
+          \\"trace\\": [
+            {
+              \\"typeName\\": \\"Object\\",
+              \\"functionName\\": \\"Object.<anonymous>\\",
+              \\"methodName\\": null,
+              \\"fileName\\": \\"__tests__/_app.js\\",
+              \\"lineNumber\\": 5,
+              \\"columnNumber\\": 5,
+              \\"evalOrigin\\": \\"__tests__/_app.js\\",
+              \\"toplevel\\": false,
+              \\"eval\\": false,
+              \\"native\\": false,
+              \\"constructor\\": false
+            }
+          ],
+          \\"method\\": \\"post\\"
+        }
+      ],
+      \\"trace\\": [
+        {
+          \\"typeName\\": \\"Object\\",
+          \\"functionName\\": \\"Object.<anonymous>\\",
+          \\"methodName\\": null,
+          \\"fileName\\": \\"__tests__/_app.js\\",
+          \\"lineNumber\\": 5,
+          \\"columnNumber\\": 5,
+          \\"evalOrigin\\": \\"__tests__/_app.js\\",
+          \\"toplevel\\": false,
+          \\"eval\\": false,
+          \\"native\\": false,
+          \\"constructor\\": false
+        }
+      ],
+      \\"path\\": \\"/foos\\"
+    },
+    {
+      \\"type\\": \\"handler\\",
+      \\"instance\\": \\"[Function]\\",
+      \\"name\\": \\"<anonymous>\\",
+      \\"trace\\": [
+        {
+          \\"typeName\\": \\"Object\\",
+          \\"functionName\\": \\"Object.<anonymous>\\",
+          \\"methodName\\": null,
+          \\"fileName\\": \\"__tests__/_app.js\\",
+          \\"lineNumber\\": 9,
+          \\"columnNumber\\": 5,
+          \\"evalOrigin\\": \\"__tests__/_app.js\\",
+          \\"toplevel\\": false,
+          \\"eval\\": false,
+          \\"native\\": false,
+          \\"constructor\\": false
+        }
+      ],
+      \\"path\\": \\"/\\"
+    },
+    {
+      \\"type\\": \\"route\\",
+      \\"instance\\": \\"[Route]\\",
+      \\"children\\": [
+        {
+          \\"type\\": \\"handler\\",
+          \\"instance\\": \\"[Function]\\",
+          \\"name\\": \\"<anonymous>\\",
+          \\"trace\\": [
+            {
+              \\"this\\": \\"[Object]\\",
+              \\"typeName\\": \\"Object\\",
+              \\"function\\": \\"[Function]\\",
+              \\"functionName\\": \\"Object.<anonymous>\\",
+              \\"methodName\\": null,
+              \\"fileName\\": \\"__tests__/_app.js\\",
+              \\"lineNumber\\": 18,
+              \\"columnNumber\\": 1,
+              \\"evalOrigin\\": \\"__tests__/_app.js\\",
+              \\"toplevel\\": false,
+              \\"eval\\": false,
+              \\"native\\": false,
+              \\"constructor\\": false
+            }
+          ],
+          \\"method\\": \\"get\\"
+        },
+        {
+          \\"type\\": \\"handler\\",
+          \\"instance\\": \\"[Function]\\",
+          \\"name\\": \\"<anonymous>\\",
+          \\"trace\\": [
+            {
+              \\"this\\": \\"[Object]\\",
+              \\"typeName\\": \\"Object\\",
+              \\"function\\": \\"[Function]\\",
+              \\"functionName\\": \\"Object.<anonymous>\\",
+              \\"methodName\\": null,
+              \\"fileName\\": \\"__tests__/_app.js\\",
+              \\"lineNumber\\": 21,
+              \\"columnNumber\\": 7,
+              \\"evalOrigin\\": \\"__tests__/_app.js\\",
+              \\"toplevel\\": false,
+              \\"eval\\": false,
+              \\"native\\": false,
+              \\"constructor\\": false
+            }
+          ],
+          \\"method\\": \\"delete\\"
+        }
+      ],
+      \\"trace\\": [
+        {
+          \\"typeName\\": \\"Object\\",
+          \\"functionName\\": \\"Object.<anonymous>\\",
+          \\"methodName\\": null,
+          \\"fileName\\": \\"__tests__/_app.js\\",
+          \\"lineNumber\\": 17,
+          \\"columnNumber\\": 1,
+          \\"evalOrigin\\": \\"__tests__/_app.js\\",
+          \\"toplevel\\": false,
+          \\"eval\\": false,
+          \\"native\\": false,
+          \\"constructor\\": false
+        }
+      ],
+      \\"path\\": \\"/foos/:id\\"
+    },
+    {
+      \\"type\\": \\"router\\",
+      \\"instance\\": \\"[Function]\\",
+      \\"children\\": [
+        {
+          \\"type\\": \\"route\\",
+          \\"instance\\": \\"[Route]\\",
+          \\"children\\": [
+            {
+              \\"type\\": \\"handler\\",
+              \\"instance\\": \\"[Function]\\",
+              \\"name\\": \\"<anonymous>\\",
+              \\"trace\\": [
+                {
+                  \\"typeName\\": \\"Object\\",
+                  \\"functionName\\": \\"Object.<anonymous>\\",
+                  \\"methodName\\": null,
+                  \\"fileName\\": \\"__tests__/_app.js\\",
+                  \\"lineNumber\\": 27,
+                  \\"columnNumber\\": 8,
+                  \\"evalOrigin\\": \\"__tests__/_app.js\\",
+                  \\"toplevel\\": false,
+                  \\"eval\\": false,
+                  \\"native\\": false,
+                  \\"constructor\\": false
+                }
+              ],
+              \\"method\\": \\"get\\"
+            }
+          ],
+          \\"trace\\": [
+            {
+              \\"typeName\\": \\"Object\\",
+              \\"functionName\\": \\"Object.<anonymous>\\",
+              \\"methodName\\": null,
+              \\"fileName\\": \\"__tests__/_app.js\\",
+              \\"lineNumber\\": 27,
+              \\"columnNumber\\": 8,
+              \\"evalOrigin\\": \\"__tests__/_app.js\\",
+              \\"toplevel\\": false,
+              \\"eval\\": false,
+              \\"native\\": false,
+              \\"constructor\\": false
+            }
+          ],
+          \\"path\\": \\"/\\"
+        },
+        {
+          \\"type\\": \\"route\\",
+          \\"instance\\": \\"[Route]\\",
+          \\"children\\": [
+            {
+              \\"type\\": \\"handler\\",
+              \\"instance\\": \\"[Function]\\",
+              \\"name\\": \\"<anonymous>\\",
+              \\"trace\\": [
+                {
+                  \\"typeName\\": \\"Object\\",
+                  \\"functionName\\": \\"Object.<anonymous>\\",
+                  \\"methodName\\": null,
+                  \\"fileName\\": \\"__tests__/_app.js\\",
+                  \\"lineNumber\\": 31,
+                  \\"columnNumber\\": 8,
+                  \\"evalOrigin\\": \\"__tests__/_app.js\\",
+                  \\"toplevel\\": false,
+                  \\"eval\\": false,
+                  \\"native\\": false,
+                  \\"constructor\\": false
+                }
+              ],
+              \\"method\\": \\"get\\"
+            }
+          ],
+          \\"trace\\": [
+            {
+              \\"typeName\\": \\"Object\\",
+              \\"functionName\\": \\"Object.<anonymous>\\",
+              \\"methodName\\": null,
+              \\"fileName\\": \\"__tests__/_app.js\\",
+              \\"lineNumber\\": 31,
+              \\"columnNumber\\": 8,
+              \\"evalOrigin\\": \\"__tests__/_app.js\\",
+              \\"toplevel\\": false,
+              \\"eval\\": false,
+              \\"native\\": false,
+              \\"constructor\\": false
+            }
+          ],
+          \\"path\\": \\"/:id\\"
+        }
+      ],
+      \\"trace\\": [
+        {
+          \\"typeName\\": \\"Object\\",
+          \\"functionName\\": \\"Object.<anonymous>\\",
+          \\"methodName\\": null,
+          \\"fileName\\": \\"__tests__/_app.js\\",
+          \\"lineNumber\\": 35,
+          \\"columnNumber\\": 5,
+          \\"evalOrigin\\": \\"__tests__/_app.js\\",
+          \\"toplevel\\": false,
+          \\"eval\\": false,
+          \\"native\\": false,
+          \\"constructor\\": false
+        }
+      ],
+      \\"path\\": \\"/bars\\"
+    }
+  ]
+}"
+`;

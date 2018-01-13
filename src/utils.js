@@ -7,7 +7,13 @@ function takeUntil(array, predicate) {
   return array.slice(0, index);
 }
 
+function dropUntil(array, predicate) {
+  const index = array.findIndex(predicate);
+  return array.slice(index);
+}
+
 module.exports = {
   capitalize,
-  takeUntil
+  takeUntil,
+  dropUntil
 };

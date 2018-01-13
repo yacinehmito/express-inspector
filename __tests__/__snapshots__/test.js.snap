@@ -1,23 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`compact format matches previous version 1`] = `
-"Route /foos                [2m__tests__/_app.js:5:5[0m
-  POST <anonymous>         [2m__tests__/_app.js:5:5[0m
-Route /foos/:id            [2m__tests__/_app.js:17:1[0m
-  GET <anonymous>          [2m__tests__/_app.js:18:1[0m
-  DELETE <anonymous>       [2m__tests__/_app.js:21:7[0m
-Router /bars               [2m__tests__/_app.js:35:5[0m
-  Route /                  [2m__tests__/_app.js:27:8[0m
-    GET <anonymous>        [2m__tests__/_app.js:27:8[0m
-  Route /:id               [2m__tests__/_app.js:31:8[0m
-    GET <anonymous>        [2m__tests__/_app.js:31:8[0m
+"Route /foos                [2m__tests__/_app.js:6:5[0m
+  POST / <anonymous>       [2m__tests__/_app.js:6:5[0m
+Route /foos/:id            [2m__tests__/_app.js:20:1[0m
+  GET / <anonymous>        [2m__tests__/_app.js:21:1[0m
+  DELETE / <anonymous>     [2m__tests__/_app.js:24:7[0m
+Router /bars               [2m__tests__/_app.js:39:5[0m
+  Route /                  [2m__tests__/_app.js:31:8[0m
+    GET / <anonymous>      [2m__tests__/_app.js:31:8[0m
+  Route /:id               [2m__tests__/_app.js:35:8[0m
+    GET / <anonymous>      [2m__tests__/_app.js:35:8[0m
+Route /baz                 [2m__tests__/_app.js:45:5[0m
+  GET / localMiddleware    [2m__tests__/_app.js:45:5[0m
+  GET / <anonymous>        [2m__tests__/_app.js:45:5[0m
 "
 `;
 
 exports[`json format matches previous version 1`] = `
 "{
   \\"type\\": \\"app\\",
-  \\"instance\\": \\"[Function]\\",
   \\"children\\": [
     {
       \\"type\\": \\"handler\\",
@@ -29,7 +31,7 @@ exports[`json format matches previous version 1`] = `
           \\"functionName\\": \\"Object.<anonymous>\\",
           \\"methodName\\": null,
           \\"fileName\\": \\"__tests__/_app.js\\",
-          \\"lineNumber\\": 5,
+          \\"lineNumber\\": 6,
           \\"columnNumber\\": 5,
           \\"evalOrigin\\": \\"__tests__/_app.js\\",
           \\"toplevel\\": false,
@@ -37,7 +39,8 @@ exports[`json format matches previous version 1`] = `
           \\"native\\": false,
           \\"constructor\\": false
         }
-      ]
+      ],
+      \\"path\\": \\"/\\"
     },
     {
       \\"type\\": \\"handler\\",
@@ -49,7 +52,7 @@ exports[`json format matches previous version 1`] = `
           \\"functionName\\": \\"Object.<anonymous>\\",
           \\"methodName\\": null,
           \\"fileName\\": \\"__tests__/_app.js\\",
-          \\"lineNumber\\": 5,
+          \\"lineNumber\\": 6,
           \\"columnNumber\\": 5,
           \\"evalOrigin\\": \\"__tests__/_app.js\\",
           \\"toplevel\\": false,
@@ -57,7 +60,8 @@ exports[`json format matches previous version 1`] = `
           \\"native\\": false,
           \\"constructor\\": false
         }
-      ]
+      ],
+      \\"path\\": \\"/\\"
     },
     {
       \\"type\\": \\"route\\",
@@ -67,13 +71,14 @@ exports[`json format matches previous version 1`] = `
           \\"type\\": \\"handler\\",
           \\"instance\\": \\"[Function]\\",
           \\"name\\": \\"<anonymous>\\",
+          \\"method\\": \\"post\\",
           \\"trace\\": [
             {
               \\"typeName\\": \\"Object\\",
               \\"functionName\\": \\"Object.<anonymous>\\",
               \\"methodName\\": null,
               \\"fileName\\": \\"__tests__/_app.js\\",
-              \\"lineNumber\\": 5,
+              \\"lineNumber\\": 6,
               \\"columnNumber\\": 5,
               \\"evalOrigin\\": \\"__tests__/_app.js\\",
               \\"toplevel\\": false,
@@ -82,7 +87,7 @@ exports[`json format matches previous version 1`] = `
               \\"constructor\\": false
             }
           ],
-          \\"method\\": \\"post\\"
+          \\"path\\": \\"/\\"
         }
       ],
       \\"trace\\": [
@@ -91,7 +96,7 @@ exports[`json format matches previous version 1`] = `
           \\"functionName\\": \\"Object.<anonymous>\\",
           \\"methodName\\": null,
           \\"fileName\\": \\"__tests__/_app.js\\",
-          \\"lineNumber\\": 5,
+          \\"lineNumber\\": 6,
           \\"columnNumber\\": 5,
           \\"evalOrigin\\": \\"__tests__/_app.js\\",
           \\"toplevel\\": false,
@@ -112,7 +117,7 @@ exports[`json format matches previous version 1`] = `
           \\"functionName\\": \\"Object.<anonymous>\\",
           \\"methodName\\": null,
           \\"fileName\\": \\"__tests__/_app.js\\",
-          \\"lineNumber\\": 9,
+          \\"lineNumber\\": 11,
           \\"columnNumber\\": 5,
           \\"evalOrigin\\": \\"__tests__/_app.js\\",
           \\"toplevel\\": false,
@@ -131,15 +136,14 @@ exports[`json format matches previous version 1`] = `
           \\"type\\": \\"handler\\",
           \\"instance\\": \\"[Function]\\",
           \\"name\\": \\"<anonymous>\\",
+          \\"method\\": \\"get\\",
           \\"trace\\": [
             {
-              \\"this\\": \\"[Object]\\",
               \\"typeName\\": \\"Object\\",
-              \\"function\\": \\"[Function]\\",
               \\"functionName\\": \\"Object.<anonymous>\\",
               \\"methodName\\": null,
               \\"fileName\\": \\"__tests__/_app.js\\",
-              \\"lineNumber\\": 18,
+              \\"lineNumber\\": 21,
               \\"columnNumber\\": 1,
               \\"evalOrigin\\": \\"__tests__/_app.js\\",
               \\"toplevel\\": false,
@@ -148,21 +152,20 @@ exports[`json format matches previous version 1`] = `
               \\"constructor\\": false
             }
           ],
-          \\"method\\": \\"get\\"
+          \\"path\\": \\"/\\"
         },
         {
           \\"type\\": \\"handler\\",
           \\"instance\\": \\"[Function]\\",
           \\"name\\": \\"<anonymous>\\",
+          \\"method\\": \\"delete\\",
           \\"trace\\": [
             {
-              \\"this\\": \\"[Object]\\",
               \\"typeName\\": \\"Object\\",
-              \\"function\\": \\"[Function]\\",
               \\"functionName\\": \\"Object.<anonymous>\\",
               \\"methodName\\": null,
               \\"fileName\\": \\"__tests__/_app.js\\",
-              \\"lineNumber\\": 21,
+              \\"lineNumber\\": 24,
               \\"columnNumber\\": 7,
               \\"evalOrigin\\": \\"__tests__/_app.js\\",
               \\"toplevel\\": false,
@@ -171,7 +174,7 @@ exports[`json format matches previous version 1`] = `
               \\"constructor\\": false
             }
           ],
-          \\"method\\": \\"delete\\"
+          \\"path\\": \\"/\\"
         }
       ],
       \\"trace\\": [
@@ -180,7 +183,7 @@ exports[`json format matches previous version 1`] = `
           \\"functionName\\": \\"Object.<anonymous>\\",
           \\"methodName\\": null,
           \\"fileName\\": \\"__tests__/_app.js\\",
-          \\"lineNumber\\": 17,
+          \\"lineNumber\\": 20,
           \\"columnNumber\\": 1,
           \\"evalOrigin\\": \\"__tests__/_app.js\\",
           \\"toplevel\\": false,
@@ -203,13 +206,14 @@ exports[`json format matches previous version 1`] = `
               \\"type\\": \\"handler\\",
               \\"instance\\": \\"[Function]\\",
               \\"name\\": \\"<anonymous>\\",
+              \\"method\\": \\"get\\",
               \\"trace\\": [
                 {
                   \\"typeName\\": \\"Object\\",
                   \\"functionName\\": \\"Object.<anonymous>\\",
                   \\"methodName\\": null,
                   \\"fileName\\": \\"__tests__/_app.js\\",
-                  \\"lineNumber\\": 27,
+                  \\"lineNumber\\": 31,
                   \\"columnNumber\\": 8,
                   \\"evalOrigin\\": \\"__tests__/_app.js\\",
                   \\"toplevel\\": false,
@@ -218,7 +222,7 @@ exports[`json format matches previous version 1`] = `
                   \\"constructor\\": false
                 }
               ],
-              \\"method\\": \\"get\\"
+              \\"path\\": \\"/\\"
             }
           ],
           \\"trace\\": [
@@ -227,7 +231,7 @@ exports[`json format matches previous version 1`] = `
               \\"functionName\\": \\"Object.<anonymous>\\",
               \\"methodName\\": null,
               \\"fileName\\": \\"__tests__/_app.js\\",
-              \\"lineNumber\\": 27,
+              \\"lineNumber\\": 31,
               \\"columnNumber\\": 8,
               \\"evalOrigin\\": \\"__tests__/_app.js\\",
               \\"toplevel\\": false,
@@ -246,13 +250,14 @@ exports[`json format matches previous version 1`] = `
               \\"type\\": \\"handler\\",
               \\"instance\\": \\"[Function]\\",
               \\"name\\": \\"<anonymous>\\",
+              \\"method\\": \\"get\\",
               \\"trace\\": [
                 {
                   \\"typeName\\": \\"Object\\",
                   \\"functionName\\": \\"Object.<anonymous>\\",
                   \\"methodName\\": null,
                   \\"fileName\\": \\"__tests__/_app.js\\",
-                  \\"lineNumber\\": 31,
+                  \\"lineNumber\\": 35,
                   \\"columnNumber\\": 8,
                   \\"evalOrigin\\": \\"__tests__/_app.js\\",
                   \\"toplevel\\": false,
@@ -261,7 +266,7 @@ exports[`json format matches previous version 1`] = `
                   \\"constructor\\": false
                 }
               ],
-              \\"method\\": \\"get\\"
+              \\"path\\": \\"/\\"
             }
           ],
           \\"trace\\": [
@@ -270,7 +275,7 @@ exports[`json format matches previous version 1`] = `
               \\"functionName\\": \\"Object.<anonymous>\\",
               \\"methodName\\": null,
               \\"fileName\\": \\"__tests__/_app.js\\",
-              \\"lineNumber\\": 31,
+              \\"lineNumber\\": 35,
               \\"columnNumber\\": 8,
               \\"evalOrigin\\": \\"__tests__/_app.js\\",
               \\"toplevel\\": false,
@@ -288,7 +293,7 @@ exports[`json format matches previous version 1`] = `
           \\"functionName\\": \\"Object.<anonymous>\\",
           \\"methodName\\": null,
           \\"fileName\\": \\"__tests__/_app.js\\",
-          \\"lineNumber\\": 35,
+          \\"lineNumber\\": 39,
           \\"columnNumber\\": 5,
           \\"evalOrigin\\": \\"__tests__/_app.js\\",
           \\"toplevel\\": false,
@@ -298,7 +303,75 @@ exports[`json format matches previous version 1`] = `
         }
       ],
       \\"path\\": \\"/bars\\"
+    },
+    {
+      \\"type\\": \\"route\\",
+      \\"instance\\": \\"[Route]\\",
+      \\"children\\": [
+        {
+          \\"type\\": \\"handler\\",
+          \\"instance\\": \\"[Function]\\",
+          \\"name\\": \\"localMiddleware\\",
+          \\"method\\": \\"get\\",
+          \\"trace\\": [
+            {
+              \\"typeName\\": \\"Object\\",
+              \\"functionName\\": \\"Object.<anonymous>\\",
+              \\"methodName\\": null,
+              \\"fileName\\": \\"__tests__/_app.js\\",
+              \\"lineNumber\\": 45,
+              \\"columnNumber\\": 5,
+              \\"evalOrigin\\": \\"__tests__/_app.js\\",
+              \\"toplevel\\": false,
+              \\"eval\\": false,
+              \\"native\\": false,
+              \\"constructor\\": false
+            }
+          ],
+          \\"path\\": \\"/\\"
+        },
+        {
+          \\"type\\": \\"handler\\",
+          \\"instance\\": \\"[Function]\\",
+          \\"name\\": \\"<anonymous>\\",
+          \\"method\\": \\"get\\",
+          \\"trace\\": [
+            {
+              \\"typeName\\": \\"Object\\",
+              \\"functionName\\": \\"Object.<anonymous>\\",
+              \\"methodName\\": null,
+              \\"fileName\\": \\"__tests__/_app.js\\",
+              \\"lineNumber\\": 45,
+              \\"columnNumber\\": 5,
+              \\"evalOrigin\\": \\"__tests__/_app.js\\",
+              \\"toplevel\\": false,
+              \\"eval\\": false,
+              \\"native\\": false,
+              \\"constructor\\": false
+            }
+          ],
+          \\"path\\": \\"/\\"
+        }
+      ],
+      \\"trace\\": [
+        {
+          \\"typeName\\": \\"Object\\",
+          \\"functionName\\": \\"Object.<anonymous>\\",
+          \\"methodName\\": null,
+          \\"fileName\\": \\"__tests__/_app.js\\",
+          \\"lineNumber\\": 45,
+          \\"columnNumber\\": 5,
+          \\"evalOrigin\\": \\"__tests__/_app.js\\",
+          \\"toplevel\\": false,
+          \\"eval\\": false,
+          \\"native\\": false,
+          \\"constructor\\": false
+        }
+      ],
+      \\"path\\": \\"/baz\\"
     }
-  ]
+  ],
+  \\"instance\\": \\"[Function]\\",
+  \\"path\\": \\"/\\"
 }"
 `;

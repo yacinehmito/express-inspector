@@ -10,9 +10,10 @@
     "src"
   ],
   "dependencies": {
-    "express": "^4.16.2",
-    "methods": "~1.1.2",
     "stack-trace": "^0.0.10"
+  },
+  "peerDependencies": {
+    "express": "^4.16.2"
   },
   "devDependencies": {
     "eslint": "^4.15.0",
@@ -20,7 +21,6 @@
     "eslint-plugin-jest": "^21.5.0",
     "eslint-plugin-prettier": "^2.4.0",
     "jest": "^22.0.4",
-    "mockery": "^2.1.0",
     "prettier": "^1.9.2"
   },
   "scripts": {

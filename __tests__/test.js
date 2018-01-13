@@ -1,9 +1,12 @@
 const path = require("path");
-const { tree, trace, format } = require("..");
+const { trace, format, tree } = require("..");
 const { takeUntil } = require("../src/utils");
-const express = require("express");
 
-trace(express);
+trace({
+  replacer(layerPath, mockLayer) {
+    jest.mock(layerPath, () => mockLayer);
+  }
+});
 
 const app = require("./_app");
 

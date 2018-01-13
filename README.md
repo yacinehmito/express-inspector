@@ -9,16 +9,11 @@ The tool express-inspector helps you understand your express app by reporting al
 Say you have the following `index.js` file:
 
 ```javascript
-const express = require("express");
 const inspector = require("express-inspector");
-
-inspector.trace(express);
+inspector.trace();
+const express = require("express");
 
 const app = express();
-
-app.get("/", (req, res) => {
-  res.send("Hello world");
-});
 
 app.get("/:name", (req, res) => {
   res.send(`Hello ${req.params.name}`);
@@ -32,17 +27,11 @@ app.listen();
 When executing, it will output the following lines:
 
 ```
-Route /                       index.js:8:5
-  GET <anonymous>             index.js:8:5
-Route /:name                  index.js:12:5
-  GET <anonymous>             index.js:12:5
+Route /:name                   index.js:7:5
+  GET <anonymous>
 ```
 
-To see more examples:
-
-- clone the repo
-- install the dependencies (by executing the command `yarn`)
-- execute the command `examples/run <name>` where `<name>` is one of `simple`, `standard` or `sandboxed`.
+Obviously it gets more interesting if you have more complicated setup.
 
 ## Getting Started
 
@@ -65,16 +54,16 @@ yarn add --dev express-inspector
 ### Usage
 
 You first need to enable tracing for the express objects.
-To do so, you need to call `trace` on express before creating any express application or router (ideally at the top of your entry file).
+To do so, you need to call `trace` before requiring express. 
 
 Then you can call `inspect` on an application or on a router. It will output a nice report in your console.
 
 Example:
 
 ```javascript
-const express = require("express");
 const inspector = require("express-inspector");
-inspector.trace(express);
+inspector.trace();
+const express = require("express");
 
 // Other calls of `require` here
 
@@ -85,7 +74,7 @@ const app = express();
 inspector.inspect(app) // Before call to `listen`
 ```
 
-Of course you can disable tracing in production by first checking the value of `process.env.NODE_ENV`. See the files in `examples/standard` for an example.
+Of course you can disable tracing in production by first checking the value of `process.env.NODE_ENV`. See the file in `examples/standard/index.js` for an example.
 
 ## Advanced features
 
@@ -107,7 +96,7 @@ You can specify your own formatter to `inspect` by setting the format option.
 A formatter is a function that takes a report tree as input and outputs a string.
 A report tree is an object whose internal structure matches the app's or the router's.
 
-The package comes bundled with two formatters: `compact` (the default) and `json`. You can also set the format option to one of thses strings.
+The package comes bundled with two formatters: `compact` (the default) and `json`. You can also set the format option to one of theses strings.
 
 Example when we only output the type of the object being inspected:
 
@@ -118,16 +107,6 @@ inspector.inspect(appOrRouter, {
   }
 })
 ```
-
-### Sandboxing traced express
-
-The tracing will mutate the prototypes used by express. With the help of the modules cache it allows us to trace the whole code with minimal effort.
-
-However, it has some downsides: it is very dependent on the order of the calls and it cannot be selectively toggled.
-
-If you want more control over what is being traced, you can use the `express` object exported by the package where you would use the regular express.
-
-Take a look at the files in `examples/sandboxed` for an example.
 
 ### Using the lower-level API
 

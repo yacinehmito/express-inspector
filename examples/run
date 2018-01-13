@@ -1,15 +1,6 @@
 #!/usr/bin/env node
 
-const path = require("path");
-const mockery = require("mockery");
-
-function getExamplePath(exampleName) {
-  return path.join(__dirname, exampleName);
-}
-
-function getLibraryPath() {
-  return path.join(__dirname, "..");
-}
+const Module = require("module");
 
 const exampleName = process.argv[2];
 
@@ -19,13 +10,14 @@ if (!exampleName) {
   process.exit(1);
 }
 
-const expressInspector = require(getLibraryPath());
-
-mockery.enable({
-  warnOnReplace: false,
-  warnOnUnregistered: false
+// Substitute with local version
+Module._load = new Proxy(Module._load, {
+  apply(target, context, args) {
+    if (args[0] === "express-inspector") {
+      args[0] = require.resolve("..");
+    }
+    return Reflect.apply(target, context, args);
+  }
 });
 
-mockery.registerMock("express-inspector", expressInspector);
-
-require(getExamplePath(exampleName));
+require(`./${exampleName}`);

@@ -1,9 +1,4 @@
 const express = require("express");
-const inspector = require("express-inspector");
-
-if (process.env.NODE_ENV !== "production") {
-  inspector.trace(express);
-}
 
 const router = require("./router");
 

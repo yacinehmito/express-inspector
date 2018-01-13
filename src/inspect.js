@@ -14,15 +14,17 @@ function inspect(root, options) {
     formatter = opts.format;
   } else if (typeof opts.format === "string") {
     if (!format[opts.format]) {
-      throw new Error(`Format ${opts.format} unknown`);
+      throw new Error(`express-inspector: format ${opts.format} unknown`);
     }
     formatter = format[opts.format];
   } else {
-    throw new TypeError("Format must either be a function or a string");
+    throw new TypeError(
+      "express-inspector: format must either be a function or a string"
+    );
   }
 
   if (typeof opts.logger !== "function") {
-    throw new TypeError("Logger must be a function");
+    throw new TypeError("express-inspector: logger must be a function");
   }
 
   opts.logger(formatter(buildTree(root)));

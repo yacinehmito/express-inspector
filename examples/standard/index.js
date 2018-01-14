@@ -1,6 +1,7 @@
-const inspector = require("express-inspector");
+let inspector;
 
 if (process.env.NODE_ENV !== "production") {
+  inspector = require("express-inspector");
   inspector.trace();
 }
 

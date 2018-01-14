@@ -25,6 +25,7 @@ exports[`json format matches previous version 1`] = `
       \\"type\\": \\"handler\\",
       \\"instance\\": \\"[Function]\\",
       \\"name\\": \\"query\\",
+      \\"fullpath\\": \\"/\\",
       \\"trace\\": [
         {
           \\"typeName\\": \\"Object\\",
@@ -46,6 +47,7 @@ exports[`json format matches previous version 1`] = `
       \\"type\\": \\"handler\\",
       \\"instance\\": \\"[Function]\\",
       \\"name\\": \\"expressInit\\",
+      \\"fullpath\\": \\"/\\",
       \\"trace\\": [
         {
           \\"typeName\\": \\"Object\\",
@@ -71,6 +73,7 @@ exports[`json format matches previous version 1`] = `
           \\"type\\": \\"handler\\",
           \\"instance\\": \\"[Function]\\",
           \\"name\\": \\"<anonymous>\\",
+          \\"fullpath\\": \\"/foos\\",
           \\"method\\": \\"post\\",
           \\"trace\\": [
             {
@@ -90,6 +93,7 @@ exports[`json format matches previous version 1`] = `
           \\"path\\": \\"/\\"
         }
       ],
+      \\"fullpath\\": \\"/foos\\",
       \\"trace\\": [
         {
           \\"typeName\\": \\"Object\\",
@@ -111,6 +115,7 @@ exports[`json format matches previous version 1`] = `
       \\"type\\": \\"handler\\",
       \\"instance\\": \\"[Function]\\",
       \\"name\\": \\"<anonymous>\\",
+      \\"fullpath\\": \\"/\\",
       \\"trace\\": [
         {
           \\"typeName\\": \\"Object\\",
@@ -136,6 +141,7 @@ exports[`json format matches previous version 1`] = `
           \\"type\\": \\"handler\\",
           \\"instance\\": \\"[Function]\\",
           \\"name\\": \\"<anonymous>\\",
+          \\"fullpath\\": \\"/foos/:id\\",
           \\"method\\": \\"get\\",
           \\"trace\\": [
             {
@@ -158,6 +164,7 @@ exports[`json format matches previous version 1`] = `
           \\"type\\": \\"handler\\",
           \\"instance\\": \\"[Function]\\",
           \\"name\\": \\"<anonymous>\\",
+          \\"fullpath\\": \\"/foos/:id\\",
           \\"method\\": \\"delete\\",
           \\"trace\\": [
             {
@@ -177,6 +184,7 @@ exports[`json format matches previous version 1`] = `
           \\"path\\": \\"/\\"
         }
       ],
+      \\"fullpath\\": \\"/foos/:id\\",
       \\"trace\\": [
         {
           \\"typeName\\": \\"Object\\",
@@ -206,6 +214,7 @@ exports[`json format matches previous version 1`] = `
               \\"type\\": \\"handler\\",
               \\"instance\\": \\"[Function]\\",
               \\"name\\": \\"<anonymous>\\",
+              \\"fullpath\\": \\"/bars\\",
               \\"method\\": \\"get\\",
               \\"trace\\": [
                 {
@@ -225,6 +234,7 @@ exports[`json format matches previous version 1`] = `
               \\"path\\": \\"/\\"
             }
           ],
+          \\"fullpath\\": \\"/bars\\",
           \\"trace\\": [
             {
               \\"typeName\\": \\"Object\\",
@@ -250,6 +260,7 @@ exports[`json format matches previous version 1`] = `
               \\"type\\": \\"handler\\",
               \\"instance\\": \\"[Function]\\",
               \\"name\\": \\"<anonymous>\\",
+              \\"fullpath\\": \\"/bars/:id\\",
               \\"method\\": \\"get\\",
               \\"trace\\": [
                 {
@@ -269,6 +280,7 @@ exports[`json format matches previous version 1`] = `
               \\"path\\": \\"/\\"
             }
           ],
+          \\"fullpath\\": \\"/bars/:id\\",
           \\"trace\\": [
             {
               \\"typeName\\": \\"Object\\",
@@ -287,6 +299,7 @@ exports[`json format matches previous version 1`] = `
           \\"path\\": \\"/:id\\"
         }
       ],
+      \\"fullpath\\": \\"/bars\\",
       \\"trace\\": [
         {
           \\"typeName\\": \\"Object\\",
@@ -312,6 +325,7 @@ exports[`json format matches previous version 1`] = `
           \\"type\\": \\"handler\\",
           \\"instance\\": \\"[Function]\\",
           \\"name\\": \\"localMiddleware\\",
+          \\"fullpath\\": \\"/baz\\",
           \\"method\\": \\"get\\",
           \\"trace\\": [
             {
@@ -334,6 +348,7 @@ exports[`json format matches previous version 1`] = `
           \\"type\\": \\"handler\\",
           \\"instance\\": \\"[Function]\\",
           \\"name\\": \\"<anonymous>\\",
+          \\"fullpath\\": \\"/baz\\",
           \\"method\\": \\"get\\",
           \\"trace\\": [
             {
@@ -353,6 +368,7 @@ exports[`json format matches previous version 1`] = `
           \\"path\\": \\"/\\"
         }
       ],
+      \\"fullpath\\": \\"/baz\\",
       \\"trace\\": [
         {
           \\"typeName\\": \\"Object\\",
@@ -372,6 +388,7 @@ exports[`json format matches previous version 1`] = `
     }
   ],
   \\"instance\\": \\"[Function]\\",
-  \\"path\\": \\"/\\"
+  \\"path\\": \\"/\\",
+  \\"fullpath\\": \\"/\\"
 }"
 `;

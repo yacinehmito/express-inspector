@@ -1,3 +1,4 @@
+const path = require("path");
 const { getLayerData, PROXIED } = require("./layer");
 const { isApplication, isRouter, isRoute } = require("./types");
 
@@ -10,7 +11,8 @@ const { isApplication, isRouter, isRoute } = require("./types");
 function buildTreeFromRoot(root) {
   const node = {
     instance: root,
-    path: "/"
+    path: "/",
+    fullpath: "/"
   };
 
   function makeNode(data) {
@@ -18,7 +20,7 @@ function buildTreeFromRoot(root) {
   }
 
   function buildChildNode(layer) {
-    return buildNodeFromLayer(layer);
+    return buildNodeFromLayer(layer, "/");
   }
 
   if (isApplication(root)) {
@@ -42,7 +44,7 @@ function buildTreeFromRoot(root) {
   );
 }
 
-function buildNodeFromLayer(layer) {
+function buildNodeFromLayer(layer, currentFullpath) {
   if (!layer[PROXIED]) {
     throw new Error(
       "express-inspector: layer has been instanciated without tracing"
@@ -50,16 +52,22 @@ function buildNodeFromLayer(layer) {
   }
 
   const layerData = getLayerData(layer);
+  const fullpath =
+    !layerData.path || layerData.path === "/"
+      ? currentFullpath
+      : path.join(currentFullpath, layerData.path);
+
+  const node = { fullpath };
   // We extract the method here and not in the Layer proxy
   // because it is added to the layer after instantiation
-  const node = layer.method ? { method: layer.method } : undefined;
+  if (layer.method) node.method = layer.method;
 
   function makeNode(data) {
     return Object.assign({}, data, node, layerData);
   }
 
   function buildChildNode(layer) {
-    return buildNodeFromLayer(layer);
+    return buildNodeFromLayer(layer, fullpath);
   }
 
   if (isRoute(layer.route)) {

@@ -1,4 +1,5 @@
 module.exports = {
   compact: require("./compact"),
-  json: require("./json")
+  json: require("./json"),
+  flat: require("./flat")
 };

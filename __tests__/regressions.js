@@ -37,3 +37,9 @@ describe("compact format", () => {
     expect(format.compact(tree(app))).toMatchSnapshot();
   });
 });
+
+describe("flat format", () => {
+  it("matches previous version", () => {
+    expect(format.flat(tree(app))).toMatchSnapshot();
+  });
+});

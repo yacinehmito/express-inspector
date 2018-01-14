@@ -12,8 +12,18 @@ function dropUntil(array, predicate) {
   return array.slice(index);
 }
 
+function flatMap(array, callback) {
+  const output = [];
+  const { length } = array;
+  for (let i = 0; i < length; i++) {
+    output.push(...callback(array[i], i, array));
+  }
+  return output;
+}
+
 module.exports = {
   capitalize,
   takeUntil,
-  dropUntil
+  dropUntil,
+  flatMap
 };

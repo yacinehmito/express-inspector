@@ -17,6 +17,17 @@ Route /baz                 [2m__tests__/_regressionsApp.js:45:5[0m
 "
 `;
 
+exports[`flat format matches previous version 1`] = `
+"GET    /bars           [2m__tests__/_regressionsApp.js:31:8[0m
+GET    /bars/:id       [2m__tests__/_regressionsApp.js:35:8[0m
+GET    /baz            [2m__tests__/_regressionsApp.js:45:5[0m
+GET    /baz            [2m__tests__/_regressionsApp.js:45:5[0m
+POST   /foos           [2m__tests__/_regressionsApp.js:6:5[0m
+GET    /foos/:id       [2m__tests__/_regressionsApp.js:21:1[0m
+DELETE /foos/:id       [2m__tests__/_regressionsApp.js:24:7[0m
+"
+`;
+
 exports[`json format matches previous version 1`] = `
 "{
   \\"type\\": \\"app\\",

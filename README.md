@@ -129,7 +129,7 @@ You can specify your own formatter to `inspect` by setting the format option.
 A formatter is a function that takes a report tree as input and outputs a string.
 A report tree is an object whose internal structure matches the app's or the router's.
 
-The package comes bundled with two formatters: `compact` (the default) and `json`. You can also set the format option to one of theses strings.
+The package comes bundled with three formatters: `compact` (the default), `flat` and `json`. You can also set the format option to one of theses strings.
 
 Example when we only output the type of the object being inspected:
 
@@ -143,9 +143,9 @@ inspector.inspect(appOrRouter, {
 
 ### Using the lower-level API
 
-You can build your own `inspect` function with `tree`, `format.compact` and/or `format.json`.
+You can build your own `inspect` function with `tree` and `format`.
 
-The function `tree` will build a report tree from an express app or router, whereas `format.compact` and `format.json` would take such a tree and turn it into a string. 
+The function `tree` will build a report tree from an express app or router, whereas `format` is an object whose methods can turn such a tree into a string ready to be logged.
 
 ## Contributing
 

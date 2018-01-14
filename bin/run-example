@@ -1,0 +1,39 @@
+#!/usr/bin/env node
+
+const args = process.argv.slice(2);
+
+const usage = "usage: run-example <example>\n";
+
+if (args.includes("-h") || args.includes("--help")) {
+  process.stdout.write(usage);
+  process.exit(0);
+}
+
+if (args.length === 0 || args.length > 1 || !args[0]) {
+  process.stderr.write(usage);
+  process.exit(1);
+}
+
+const example = args[0];
+
+const fs = require("fs");
+const path = require("path");
+
+if (!fs.readdirSync(path.join(__dirname, "../examples")).includes(example)) {
+  process.stderr.write(`Example ${example} not found.\n${usage}`);
+  process.exit(1);
+}
+
+const Module = require("module");
+
+// Substitute with local version
+Module._load = new Proxy(Module._load, {
+  apply(target, context, args) {
+    if (args[0] === "express-inspector") {
+      args[0] = require.resolve("..");
+    }
+    return Reflect.apply(target, context, args);
+  }
+});
+
+require(`../examples/${example}`);

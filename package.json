@@ -26,7 +26,8 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
-    "prettify": "eslint --fix ."
+    "prettify": "eslint --fix .",
+    "run-example": "node bin/run-example"
   },
   "jest": {
     "testPathIgnorePatterns": [

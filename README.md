@@ -27,8 +27,8 @@ app.listen();
 When executing, it will output the following lines:
 
 ```
-Route /:name                   index.js:7:5
-  GET <anonymous>
+Route /:name             index.js:7:5
+GET / <anonymous>        index.js:7:5
 ```
 
 Obviously it gets more interesting if you have more complicated setup.

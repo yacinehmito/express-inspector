@@ -2,13 +2,9 @@ const path = require("path");
 const { trace, format, tree } = require("..");
 const { takeUntil } = require("../src/utils");
 
-trace({
-  replacer(layerPath, mockLayer) {
-    jest.mock(layerPath, () => mockLayer);
-  }
-});
+trace({ replacer: jest.setMock });
 
-const app = require("./_app");
+const app = require("./_regressionsApp");
 
 function makePathRelativeToProject(absolutePath) {
   return path.relative(path.join(__dirname, ".."), absolutePath);
@@ -27,8 +23,6 @@ function normalizeTrace(trace) {
     })
   );
 }
-
-// TODO: Actual tests
 
 describe("json format", () => {
   it("matches previous version", () => {

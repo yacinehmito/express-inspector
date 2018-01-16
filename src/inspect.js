@@ -9,25 +9,34 @@ const defaultOptions = {
 function inspect(root, options) {
   const opts = Object.assign({}, defaultOptions, options);
 
-  let formatter;
-  if (typeof opts.format === "function") {
-    formatter = opts.format;
-  } else if (typeof opts.format === "string") {
-    if (!format[opts.format]) {
-      throw new Error(`express-inspector: format ${opts.format} unknown`);
-    }
-    formatter = format[opts.format];
-  } else {
-    throw new TypeError(
-      "express-inspector: format must either be a function or a string"
-    );
-  }
+  const formatter = processFormatOption(opts.format);
+  const logger = processLoggerOption(opts.logger);
 
-  if (typeof opts.logger !== "function") {
+  const reportTree = buildTree(root);
+  const formattedReport = formatter(reportTree);
+  logger(formattedReport);
+}
+
+function processFormatOption(formatOption) {
+  if (typeof formatOption === "function") {
+    return formatOption;
+  }
+  if (typeof formatOption === "string") {
+    if (!format[formatOption]) {
+      throw new Error(`express-inspector: format ${formatOption} unknown`);
+    }
+    return format[formatOption];
+  }
+  throw new TypeError(
+    "express-inspector: format must either be a function or a string"
+  );
+}
+
+function processLoggerOption(loggerOption) {
+  if (typeof loggerOption !== "function") {
     throw new TypeError("express-inspector: logger must be a function");
   }
-
-  opts.logger(formatter(buildTree(root)));
+  return loggerOption;
 }
 
 module.exports = inspect;

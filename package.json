@@ -38,6 +38,7 @@
   },
   "scripts": {
     "test": "jest",
+    "coverage": "jest --coverage",
     "lint": "eslint .",
     "prettify": "eslint --fix .",
     "run-example": "node bin/run-example"
@@ -46,20 +47,5 @@
     "testPathIgnorePatterns": [
       "_[^/]*\\.js"
     ]
-  },
-  "eslintConfig": {
-    "root": true,
-    "parserOptions": {
-      "ecmaVersion": 2017
-    },
-    "extends": [
-      "eslint:recommended",
-      "plugin:prettier/recommended",
-      "plugin:jest/recommended"
-    ],
-    "env": {
-      "node": true,
-      "es6": true
-    }
   }
 }

@@ -1,0 +1,50 @@
+#!/usr/bin/env node
+
+const yargs = require("yargs");
+
+function commandOptions(yargs) {
+  return yargs
+    .positional("file", {
+      describe: "path to the node module to be loaded",
+      type: "string"
+    })
+    .option("f", {
+      alias: "format",
+      describe: "format to be used",
+      default: "compact",
+      choices: ["compact", "flat", "json"]
+    });
+}
+
+yargs
+  .usage("$0 <command> [options] <file>")
+  .command(
+    "inspect [options] <file>",
+    "inspect your express app",
+    commandOptions,
+    argv => {
+      const { inspect } = require("../cli");
+      const inspector = require("..");
+      const path = require("path");
+      inspect(path.resolve(argv.file), inspector, {
+        format: argv.format
+      });
+    }
+  )
+  .command(
+    "run [options] <file>",
+    "run your express server and inspect at startup",
+    commandOptions,
+    argv => {
+      const { run } = require("../cli");
+      const inspector = require("..");
+      const path = require("path");
+      run(path.resolve(argv.file), inspector, {
+        format: argv.format
+      });
+    }
+  )
+  .demandCommand()
+  .help("h")
+  .alias("h", "help")
+  .alias("v", "version").argv;

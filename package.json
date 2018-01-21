@@ -5,17 +5,24 @@
   "author": "Yacine Hmito <yacine.hmito@gmail.com>",
   "license": "MIT",
   "main": "index.js",
+  "bin": {
+    "express-inspector": "bin/express-inspector"
+  },
   "files": [
+    "bin/express-inspector",
     "index.js",
+    "cli.js",
     "src"
   ],
   "dependencies": {
-    "stack-trace": "^0.0.10"
+    "stack-trace": "^0.0.10",
+    "yargs": "^10.1.1"
   },
   "peerDependencies": {
     "express": "^4.16.2"
   },
   "devDependencies": {
+    "@types/yargs": "^10.0.1",
     "eslint": "^4.15.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-jest": "^21.5.0",

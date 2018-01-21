@@ -115,11 +115,13 @@ This approach has numerous caveats:
 
 By default, `inspect` will write the report to standard output. If you would rather plug your own logger, you can pass it as an option.
 
-Example when using `console.info` as a logger:
+Example when writing the report to standard error:
 
 ```javascript
 inspector.inspect(app, {
-  logger: console.info
+  logger(report) {
+    process.stderr.write(report);
+  }
 })
 ```
 

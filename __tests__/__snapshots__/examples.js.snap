@@ -1,21 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Example simple gives the same output as before 1`] = `
-"Route /:name               [2mexamples/simple/index.js:7:5[0m
-  GET / <anonymous>        [2mexamples/simple/index.js:7:5[0m
+exports[`Full example gives the same output as before 1`] = `
+"Route /foos                [2mexamples/full/app.js:7:5[0m
+  POST / <anonymous>       [2mexamples/full/app.js:7:5[0m
+Route /foos/:id            [2mexamples/full/app.js:19:1[0m
+  GET / <anonymous>        [2mexamples/full/app.js:20:1[0m
+  DELETE / <anonymous>     [2mexamples/full/app.js:23:7[0m
+Router /bars               [2mexamples/full/app.js:32:5[0m
+  Route /                  [2mexamples/full/router.js:5:8[0m
+    GET / <anonymous>      [2mexamples/full/router.js:5:8[0m
+  Route /:id               [2mexamples/full/router.js:9:8[0m
+    GET / <anonymous>      [2mexamples/full/router.js:9:8[0m
 "
 `;
 
-exports[`Example standard gives the same output as before 1`] = `
-"Route /foos                [2mexamples/standard/app.js:7:5[0m
-  POST / <anonymous>       [2mexamples/standard/app.js:7:5[0m
-Route /foos/:id            [2mexamples/standard/app.js:19:1[0m
-  GET / <anonymous>        [2mexamples/standard/app.js:20:1[0m
-  DELETE / <anonymous>     [2mexamples/standard/app.js:23:7[0m
-Router /bars               [2mexamples/standard/app.js:27:5[0m
-  Route /                  [2mexamples/standard/router.js:5:8[0m
-    GET / <anonymous>      [2mexamples/standard/router.js:5:8[0m
-  Route /:id               [2mexamples/standard/router.js:9:8[0m
-    GET / <anonymous>      [2mexamples/standard/router.js:9:8[0m
+exports[`Simple example gives the same output as before 1`] = `
+"Route /:name               [2mexamples/simple/index.js:5:5[0m
+  GET / <anonymous>        [2mexamples/simple/index.js:5:5[0m
 "
 `;

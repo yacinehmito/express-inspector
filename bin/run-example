@@ -1,39 +1,62 @@
 #!/usr/bin/env node
 
-const args = process.argv.slice(2);
-
-const usage = "usage: run-example <example>\n";
-
-if (args.includes("-h") || args.includes("--help")) {
-  process.stdout.write(usage);
-  process.exit(0);
-}
-
-if (args.length === 0 || args.length > 1 || !args[0]) {
-  process.stderr.write(usage);
-  process.exit(1);
-}
-
-const example = args[0];
-
-const fs = require("fs");
 const path = require("path");
+const yargs = require("yargs");
 
-if (!fs.readdirSync(path.join(__dirname, "../examples")).includes(example)) {
-  process.stderr.write(`Example ${example} not found.\n${usage}`);
-  process.exit(1);
+yargs
+  .usage("$0 <example>")
+  .command(
+    "$0 <example>",
+    false,
+    yargs =>
+      yargs.positional("example", {}).check(({ example }) => {
+        const fs = require("fs");
+        const path = require("path");
+
+        const exampleExists = fs
+          .readdirSync(path.join(__dirname, "../examples"))
+          .includes(example);
+
+        if (!exampleExists) {
+          throw `Example ${example} not found`;
+        }
+        return true;
+      }),
+    argv => execute(argv.example)
+  )
+  .help("h")
+  .alias("h", "help").argv;
+
+function requireExample(example) {
+  return require(path.join("../examples", example));
 }
 
-const Module = require("module");
+function runExample(example) {
+  return require("../cli").run(
+    require.resolve(path.join("../examples", example)),
+    require("..")
+  );
+}
 
-// Substitute with local version
-Module._load = new Proxy(Module._load, {
-  apply(target, context, args) {
-    if (args[0] === "express-inspector") {
-      args[0] = require.resolve("..");
+function execute(example) {
+  const Module = require("module");
+
+  // Substitute with local version
+  Module._load = new Proxy(Module._load, {
+    apply(target, context, args) {
+      if (args[0] === "express-inspector") {
+        args[0] = require.resolve("..");
+      }
+      return Reflect.apply(target, context, args);
     }
-    return Reflect.apply(target, context, args);
-  }
-});
+  });
 
-require(`../examples/${example}`);
+  switch (example) {
+    case "full":
+      return requireExample("full");
+    case "simple":
+      return runExample("simple");
+    default:
+      throw new Error(`No way to know how to run example ${example}`);
+  }
+}

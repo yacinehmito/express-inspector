@@ -24,6 +24,11 @@ app
     res.send(`DELETE /foos/${req.params.id}`);
   });
 
-app.use("/bars", router);
+function simpleMiddleware(req, res, next) {
+  req.foo = "bar";
+  next();
+}
+
+app.use("/bars", simpleMiddleware, router);
 
 module.exports = app;

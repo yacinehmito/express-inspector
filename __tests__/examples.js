@@ -1,4 +1,3 @@
-const fs = require("fs");
 const path = require("path");
 
 jest.mock("express-inspector", () => {
@@ -33,22 +32,6 @@ jest.mock("express-inspector", () => {
   return Object.assign({}, inspector, { trace, inspect });
 });
 
-const undefinedLogger = () => {
-  throw new Error("Logger should be set");
-};
-
-let mockLogger = undefinedLogger;
-
-function runExample(example) {
-  let output;
-  mockLogger = logged => {
-    output = logged;
-  };
-  require(path.join(__dirname, "../examples", example));
-  mockLogger = undefinedLogger;
-  return output;
-}
-
 jest.mock("express", () => {
   const express = jest.requireActual("express");
 
@@ -58,11 +41,44 @@ jest.mock("express", () => {
   return express;
 });
 
-fs.readdirSync(path.join(__dirname, "../examples")).map(example => {
-  describe(`Example ${example}`, () => {
-    const output = runExample(example);
-    it("gives the same output as before", () => {
-      expect(output).toMatchSnapshot();
-    });
+const cli = require("../cli");
+
+const undefinedLogger = () => {
+  throw new Error("Logger should be set");
+};
+
+let mockLogger = undefinedLogger;
+
+function logExample(example, runIt) {
+  let output;
+  mockLogger = logged => {
+    output = logged;
+  };
+  const modulePath = path.join(__dirname, "../examples", example);
+  if (runIt) cli.run(modulePath, jest.requireMock("express-inspector"));
+  else require(modulePath);
+  mockLogger = undefinedLogger;
+  return output;
+}
+
+function requireExample(example) {
+  return logExample(example, false);
+}
+
+function runExample(example) {
+  return logExample(example, true);
+}
+
+describe("Simple example", () => {
+  const output = runExample("simple");
+  it("gives the same output as before", () => {
+    expect(output).toMatchSnapshot();
+  });
+});
+
+describe("Full example", () => {
+  const output = requireExample("full");
+  it("gives the same output as before", () => {
+    expect(output).toMatchSnapshot();
   });
 });

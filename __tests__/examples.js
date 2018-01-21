@@ -32,13 +32,12 @@ jest.mock("express-inspector", () => {
   return Object.assign({}, inspector, { trace, inspect });
 });
 
-jest.mock("express", () => {
-  const express = jest.requireActual("express");
+jest.mock("http", () => {
+  const http = jest.requireActual("http");
 
-  // We don't want to actually start the server
-  express.application.listen = () => {};
+  http.Server.prototype.listen = () => {};
 
-  return express;
+  return http;
 });
 
 const cli = require("../cli");

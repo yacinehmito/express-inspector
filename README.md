@@ -1,5 +1,7 @@
 # express-inspector
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/yacinehmito/express-inspector.svg)](https://greenkeeper.io/)
+
 The tool express-inspector helps you understand your express app by reporting all its routes and the files where they were defined.
 
 **This project is early stage. The API may change often.**

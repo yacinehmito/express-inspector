@@ -2380,6 +2380,10 @@ p-try@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/p-try/-/p-try-1.0.0.tgz#cbc79cdbaf8fd4228e13f621f2b1a237c1b207b3"
 
+pad-end@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/pad-end/-/pad-end-1.0.2.tgz#6b41a42fdb7effa55858bb77dade52eee388e6cc"
+
 parse-glob@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/parse-glob/-/parse-glob-3.0.4.tgz#b2c376cfb11f35513badd173ef0bb6e3a388391c"

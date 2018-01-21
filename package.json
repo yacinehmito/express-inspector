@@ -15,6 +15,7 @@
     "src"
   ],
   "dependencies": {
+    "pad-end": "^1.0.2",
     "stack-trace": "^0.0.10",
     "yargs": "^10.1.1"
   },

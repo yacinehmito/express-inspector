@@ -1,6 +1,6 @@
 {
   "name": "express-inspector",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Get a better understanding of your express app",
   "author": "Yacine Hmito <yacine.hmito@gmail.com>",
   "license": "MIT",

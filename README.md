@@ -1,5 +1,7 @@
 # express-inspector
 
+[![npm](https://img.shields.io/npm/v/express-inspector.svg)](https://www.npmjs.com/package/express-inspector) [![Build Status](https://travis-ci.org/yacinehmito/express-inspector.svg?branch=master)](https://travis-ci.org/yacinehmito/express-inspector) [![Codacy Grade Badge](https://api.codacy.com/project/badge/Grade/405ea9dabfd744468e7646bd60b70a5c)](https://www.codacy.com/app/yacinehmito/express-inspector?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=yacinehmito/express-inspector&amp;utm_campaign=Badge_Grade) [![Codacy Coverage Badge](https://api.codacy.com/project/badge/Coverage/405ea9dabfd744468e7646bd60b70a5c)](https://www.codacy.com/app/yacinehmito/express-inspector?utm_source=github.com&utm_medium=referral&utm_content=yacinehmito/express-inspector&utm_campaign=Badge_Coverage) [![Greenkeeper badge](https://badges.greenkeeper.io/yacinehmito/express-inspector.svg)](https://greenkeeper.io/) [![License Badge](https://img.shields.io/npm/l/express-inspector.svg)](LICENSE)
+
 The tool express-inspector helps you understand your express app by reporting all its routes and the files where they were defined.
 
 **This project is early stage. The API may change often.**

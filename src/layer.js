@@ -8,6 +8,9 @@ const PROXIED = Symbol("PROXIED_LAYER");
 function isCallSiteRelevant(callSite) {
   // The call site is relevant if we can pin its location
   // and if it is not inside express
+  if (callSite.isNative()) {
+    return false;
+  }
   const fileName = callSite.getFileName();
   return fileName && !/node_modules\/express\//.test(fileName);
 }

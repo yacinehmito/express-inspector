@@ -1,6 +1,14 @@
 language: node_js
 node_js:
-  - "6"
-  - "7"
-  - "8"
+- '6'
+- '7'
+- '8'
 cache: yarn
+
+before_install: yarn global add greenkeeper-lockfile@1
+before_script: greenkeeper-lockfile-update
+after_script: greenkeeper-lockfile-upload
+
+env:
+  global:
+    secure: ZYf+PxJVWpuvzqzt28UPfGbK+4B0De2LIMARJZPTk/cTx7guVkbZWKFOVzQbapMYmBxIB7Xr43X661QjKYrJibYwQ6m7ANT6N63hajyjDSmYEjLIr059VBu0iVDFCMKE6cTmslNyFK+adhjpxyrq4G2+1qRr9YOON7iw946glsWcDqjzhTeTm7XYbDHxWdw9GmiO51y8iMdojL19fO0+12vkU6bqiXkaHSywN8/5hddZn4uFoymbgDwo2bWMWDYBIMTt5xwMOgBxFa1XWut4q53NOPPCCwpoUbf+NSuUyCBMMkn551NjaK5JJPagEF+4GYNpgOgwIaF9oIZMT7RexNUH/9AbNEqzOyNDlHmiYb9D01oNbRwCaqjOCPyqUIfJfsA5mqG13vYSplf2x27+evPtzrjB3t64Cpqe1XmqtHkB5ANxqL0h+effcJEjixO7KaeXE1AA6pZz4CltrEsTIHW7ElqjBCzvRhMrU4OMnS/DF4I5d7w823VGHmftsEKC0JQKugPXKDZri2cCh27eBGJBvUoKynPpPAyv9/IjOEw9hCo6DHHuq910LlGU/GUmTYyW5sORRVjHH/aQT1rXI/z3nL9JC2IZdjeLufQZDD/nsPA/hc2/kSEZJcn/uUzKQn1OUf2BlUA/bOWIVNxq9WX4NZvyd1ZY0kwsyxselm0=
